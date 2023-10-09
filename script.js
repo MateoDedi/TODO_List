@@ -15,17 +15,13 @@ function addTask() {
         saveTasksToLocalStorage();
     };
 
-    // Append the delete button to the task item
     taskItem.appendChild(deleteButton);
 
-    // Append the task item to the task list
     const taskList = document.getElementById("taskList");
     taskList.appendChild(taskItem);
 
-    // Clear the input field
     taskInput.value = "";
 
-    // Save tasks to local storage
     saveTasksToLocalStorage();
 }
 
@@ -37,7 +33,7 @@ function saveTasksToLocalStorage() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
-// Load tasks from local storage on page load
+// Load tasks from local storage on page
 window.onload = function () {
     const storedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
     const taskList = document.getElementById("taskList");
